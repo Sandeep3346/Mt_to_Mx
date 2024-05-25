@@ -1,0 +1,958 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FORM>
+	<SUMMARY TITLE="" POSITION="TEMPLATE" TMP_SCR_TYPE="M" CRITERIA_SRCH="N">
+		<TYPE>S</TYPE>
+		<SUMMARY_DATA_BLK>BLK_CRD_DTLS_CUSTOM</SUMMARY_DATA_BLK>
+		<SUMMARY_BASE/>
+		<SUMBLOCK SCREEN="SUMMARY" TABPAGE="QUERY" TYPE="SE">
+			<FIELD ID="1" TYPE="ME">
+				<NAME>AUTHSTAT</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION VALUE="A">Authorized</OPTION>
+				<OPTION VALUE="U">Unauthorized</OPTION>
+				<OPTION VALUE="R">Rejected</OPTION>
+				<LBL>حالة التفويض</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<MAXLENGTH>35</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+				<SIZE>1</SIZE>
+				<CHECKED>N</CHECKED>
+			</FIELD>
+			<FIELD ID="2" TYPE="ME">
+				<NAME>TXNSTAT</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION VALUE="O">Open</OPTION>
+				<OPTION VALUE="C">Closed</OPTION>
+				<LBL>حالة السجل</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<MAXLENGTH>35</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+				<SIZE>1</SIZE>
+				<CHECKED>N</CHECKED>
+			</FIELD>
+			<FIELD ID="3" TYPE="ME">
+				<NAME>REFERENCE_NO</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الرقم الإشاري</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="4" TYPE="ME">
+				<NAME>FIRSTNAME</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الاسم الأول</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="5" TYPE="ME">
+				<NAME>LASTNAME</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الاسم الأخير</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="6" TYPE="ME">
+				<NAME>CARDALIAS</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>اسم البطاقة</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="7" TYPE="ME">
+				<NAME>CARD_ID</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>معرف البطاقة</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="8" TYPE="ME">
+				<NAME>CARD_TYPE</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION SELECTED="0" VALUE="D">Local Debit Card</OPTION>
+				<OPTION SELECTED="0" VALUE="P">Prepaid Card</OPTION>
+				<OPTION SELECTED="0" VALUE="G">Gift Card</OPTION>
+				<LBL>نوع البطاقة</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>1</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="9" TYPE="ME">
+				<NAME>CONTACTNUMBER</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>رقم الاتصال</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="10" TYPE="ME">
+				<NAME>EADDR</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>عنوان البريد الإلكتروني</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="11" TYPE="ME">
+				<NAME>IDENTREF</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الرقم الوطني</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="12" TYPE="ME">
+				<NAME>CUSTOMER_TYPE</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION SELECTED="-1" VALUE=""/>
+				<OPTION SELECTED="0" VALUE="I">Individual</OPTION>
+				<OPTION SELECTED="0" VALUE="C">Corporate</OPTION>
+				<LBL>نوع العميل</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>1</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="13" TYPE="ME">
+				<NAME>FCC_REF_NO</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الرقم الإشاري ف فليكس كيوب</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<MAXLENGTH>16</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="14" TYPE="ME">
+				<NAME>PANDISPLAY</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>عرض بان</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="15" TYPE="ME">
+				<NAME>TITLE</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>المسمى</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="16" TYPE="ME">
+				<NAME>BATCH_ID</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>رقم دفعة الحجز</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="17" TYPE="ME">
+				<NAME>DOB</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>تاريخ الميلاد</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="18" TYPE="ME">
+				<NAME>ACCNO</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>حساب</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="19" TYPE="ME">
+				<NAME>ADDRL1</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>السطر الأول للعنوان</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="20" TYPE="ME">
+				<NAME>ADDRL2</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>السطر الثاني للعنوان</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="21" TYPE="ME">
+				<NAME>CUSTCODE</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>رمز العميل</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="22" TYPE="ME">
+				<NAME>CITY</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>المدينة</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+		</SUMBLOCK>
+		<SUMBLOCK SCREEN="SUMMARY" TABPAGE="RESULT" TYPE="ME">
+			<FIELD ID="1" TYPE="ME">
+				<NAME>AUTHSTAT</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION VALUE="A">Authorized</OPTION>
+				<OPTION VALUE="U">Unauthorized</OPTION>
+				<OPTION VALUE="R">Rejected</OPTION>
+				<LBL>حالة التفويض</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<MAXLENGTH>35</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+				<SIZE>1</SIZE>
+				<CHECKED>N</CHECKED>
+			</FIELD>
+			<FIELD ID="2" TYPE="ME">
+				<NAME>TXNSTAT</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION VALUE="O">Open</OPTION>
+				<OPTION VALUE="C">Closed</OPTION>
+				<LBL>حالة السجل</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<MAXLENGTH>35</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+				<SIZE>1</SIZE>
+				<CHECKED>N</CHECKED>
+			</FIELD>
+			<FIELD ID="3" TYPE="ME">
+				<NAME>REFERENCE_NO</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الرقم الإشاري</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="4" TYPE="ME">
+				<NAME>FIRSTNAME</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الاسم الأول</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="5" TYPE="ME">
+				<NAME>LASTNAME</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الاسم الأخير</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="6" TYPE="ME">
+				<NAME>CARDALIAS</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>اسم البطاقة</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="7" TYPE="ME">
+				<NAME>CARD_ID</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>معرف البطاقة</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="8" TYPE="ME">
+				<NAME>CARD_TYPE</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION SELECTED="0" VALUE="D">Local Debit Card</OPTION>
+				<OPTION SELECTED="0" VALUE="P">Prepaid Card</OPTION>
+				<OPTION SELECTED="0" VALUE="G">Gift Card</OPTION>
+				<LBL>نوع البطاقة</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>1</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="9" TYPE="ME">
+				<NAME>CONTACTNUMBER</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>رقم الاتصال</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="10" TYPE="ME">
+				<NAME>EADDR</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>عنوان البريد الإلكتروني</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="11" TYPE="ME">
+				<NAME>IDENTREF</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الرقم الوطني</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="12" TYPE="ME">
+				<NAME>CUSTOMER_TYPE</NAME>
+				<TYPE>SELECT</TYPE>
+				<OPTION SELECTED="-1" VALUE=""/>
+				<OPTION SELECTED="0" VALUE="I">Individual</OPTION>
+				<OPTION SELECTED="0" VALUE="C">Corporate</OPTION>
+				<LBL>نوع العميل</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<REQD>-1</REQD>
+				<MAXLENGTH>1</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="13" TYPE="ME">
+				<NAME>FCC_REF_NO</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>الرقم الإشاري ف فليكس كيوب</LBL>
+				<READ_ONLY>-1</READ_ONLY>
+				<MAXLENGTH>16</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="14" TYPE="ME">
+				<NAME>PANDISPLAY</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>عرض بان</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="15" TYPE="ME">
+				<NAME>TITLE</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>المسمى</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="16" TYPE="ME">
+				<NAME>BATCH_ID</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>رقم دفعة الحجز</LBL>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="17" TYPE="ME">
+				<NAME>DOB</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>تاريخ الميلاد</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="18" TYPE="ME">
+				<NAME>ACCNO</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>حساب</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="19" TYPE="ME">
+				<NAME>ADDRL1</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>السطر الأول للعنوان</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="20" TYPE="ME">
+				<NAME>ADDRL2</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>السطر الثاني للعنوان</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="21" TYPE="ME">
+				<NAME>CUSTCODE</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>رمز العميل</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<FIELD ID="22" TYPE="ME">
+				<NAME>CITY</NAME>
+				<TYPE>TEXT</TYPE>
+				<LBL>المدينة</LBL>
+				<REQD>-1</REQD>
+				<MAXLENGTH>100</MAXLENGTH>
+				<DTYPE>VARCHAR2</DTYPE>
+			</FIELD>
+			<LEGENDS>
+				<FIELD_NAME>CARD_TYPE</FIELD_NAME>
+				<LBL/>
+				<OPTION VALUE="D">Local Debit Card</OPTION>
+				<OPTION VALUE="P">Prepaid Card</OPTION>
+				<OPTION VALUE="G">Gift Card</OPTION>
+			</LEGENDS>
+			<LEGENDS>
+				<FIELD_NAME>CUSTOMER_TYPE</FIELD_NAME>
+				<LBL/>
+				<OPTION VALUE="I">Individual</OPTION>
+				<OPTION VALUE="C">Corporate</OPTION>
+			</LEGENDS>
+		</SUMBLOCK>
+	</SUMMARY>
+	<SCREEN NAME="CVS_MAIN" MAIN_WIN="Y" TITLE="" POSITION="template" TMP_SCR_TYPE="M">
+		<EXIT_BTN>1</EXIT_BTN>
+		<HEADER>
+			<TAB ID="TAB_HEADER">
+				<LBL/>
+			</TAB>
+		</HEADER>
+		<BODY>
+			<TAB ID="TAB_MAIN">
+				<LBL/>
+				<SECTION ID="SEC_1" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART1" NAME="PART1" WIDTH="100">
+						<FLDSET ID="FST_CRD_DTLS_CUSTOM" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL/>
+							<BLOCK>BLK_CRD_DTLS_CUSTOM</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>REFERENCE_NO</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الرقم الإشاري</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CARD_TYPE</NAME>
+								<TYPE>SELECT</TYPE>
+								<OPTION SELECTED="0" VALUE="D">Local Debit Card</OPTION>
+								<OPTION SELECTED="0" VALUE="P">Prepaid Card</OPTION>
+								<OPTION SELECTED="0" VALUE="G">Gift Card</OPTION>
+								<LBL>نوع البطاقة</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+				<SECTION ID="SEC_2" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART1" NAME="PART1" WIDTH="50">
+						<FLDSET ID="FST_DTLS_CUSTOM_1" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>تفاصيل إدخال البطاقة</LBL>
+							<BLOCK>BLK_CRD_DTLS_CUSTOM</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACCNO</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الحساب</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<LOV>
+									<NAME>LOV_ACCOUNT</NAME>
+									<TYPE>L</TYPE>
+								</LOV>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>BRNCODE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>رمز الفرع</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>TITLE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>المسمى</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>FIRSTNAME</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الاسم الأول</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>LASTNAME</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الاسم الأخير</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ADDRL1</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>السطر الأول للعنوان</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ADDRL2</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>السطر الثاني للعنوان</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CITY</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>المدينة</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CONTACTNUMBER</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>رقم الاتصال</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CUSTOMER_TYPE</NAME>
+								<TYPE>SELECT</TYPE>
+								<OPTION SELECTED="-1" VALUE=""/>
+								<OPTION SELECTED="0" VALUE="I">Individual</OPTION>
+								<OPTION SELECTED="0" VALUE="C">Corporate</OPTION>
+								<LBL>نوع العميل</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>1</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>MMT_CARD_TYPE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>نوع بطاقة مسبقة الدفع/نوع بطاقة الخصم</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+					<PART ID="PART2" NAME="PART2" WIDTH="50">
+						<FLDSET ID="FST_DTLS_CUSTOM_2" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL/>
+							<BLOCK>BLK_CRD_DTLS_CUSTOM</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>IDENTREF</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الرقم الوطني</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>MARITALSTATUS</NAME>
+								<TYPE>SELECT</TYPE>
+								<OPTION SELECTED="0" VALUE="S">Single</OPTION>
+								<OPTION SELECTED="0" VALUE="M">Married</OPTION>
+								<LBL>الحالة الاجتماعية</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>DOB</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>تاريخ الميلاد</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>SEX</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الجنس</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>EADDR</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>عنوان البريد الإلكتروني</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>DATA1</NAME>
+								<TYPE>HIDDEN</TYPE>
+								<LBL>Data 1</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<HIDDEN>-1</HIDDEN>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>DATA2</NAME>
+								<TYPE>HIDDEN</TYPE>
+								<LBL>Data 2</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<HIDDEN>-1</HIDDEN>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>DATA3</NAME>
+								<TYPE>HIDDEN</TYPE>
+								<LBL>Data 3</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<HIDDEN>-1</HIDDEN>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CUSTCODE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>رمز العميل</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="Y">
+								<NAME>BTN_AUTH</NAME>
+								<TYPE>BUTTON</TYPE>
+								<LBL>التصريح</LBL>
+								<MAXLENGTH/>
+								<DTYPE/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<EVENT>
+									<NAME>onclick</NAME>
+									<FUNCTION>fnCardAuth()</FUNCTION>
+								</EVENT>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+				<SECTION ID="SEC_3" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART1" NAME="PART1" WIDTH="50">
+						<FLDSET ID="FST_CD_DTLS" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>FCUBS تفاصيل رسوم إصدار البطاقة</LBL>
+							<BLOCK>BLK_CRD_DTLS_CUSTOM</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AMOUNT_BLOCK_NO</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>رقم دفعة الحجز</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CHARGE_REMARKS</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>ملاحظات</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>FCC_REF_NO</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>الرقم الإشاري ف فليكس كيوب</LBL>
+								<MAXLENGTH>16</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+					<PART ID="PART2" NAME="PART2" WIDTH="50">
+						<FLDSET ID="FST_CD_DTLS2" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>تفاصيل إخراج البطاقة</LBL>
+							<BLOCK>BLK_CRD_DTLS_CUSTOM</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CARDALIAS</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>اسم البطاقة</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CARD_ID</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>معرف البطاقة</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>BATCH_ID</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>رقم دفعة الحجز</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>PANDISPLAY</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>عرض بان</LBL>
+								<MAXLENGTH>100</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+			</TAB>
+		</BODY>
+		<FOOTER>
+			<TAB ID="TAB_FOOTER" NAME="TAB_FOOTER" HEIGHT="">
+				<LBL/>
+				<SECTION ID="AUDIT_TEMPLATE" NAME="AUDIT_TEMPLATE">
+					<LBL/>
+					<PART ID="AUDIT_PART_1" NAME="AUDIT_PART_1" WIDTH="50">
+						<SPRTCNT>4</SPRTCNT>
+						<FLDSET ID="FLD_AUDIT1" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL/>
+							<BLOCK>BLK_CRD_DTLS_CUSTOM</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="1" SPRT="1">
+								<NAME>MAKER</NAME>
+								<ID>MAKER</ID>
+								<TYPE>TEXT</TYPE>
+								<LBL>صانع</LBL>
+								<MAXLENGTH>12</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE>12</SIZE>
+								<WIDTH>3</WIDTH>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="1" SPRT="1">
+								<NAME>CHECKER</NAME>
+								<ID>CHECKER</ID>
+								<TYPE>TEXT</TYPE>
+								<LBL>الفحَّص</LBL>
+								<MAXLENGTH>12</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE>12</SIZE>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="2" SPRT="2">
+								<NAME>MAKERSTAMP</NAME>
+								<ID>MAKERSTAMP</ID>
+								<TYPE>DATETIME</TYPE>
+								<LBL>التاريخ والوقت</LBL>
+								<MAXLENGTH>15</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>DATE</DTYPE>
+								<SIZE>15</SIZE>
+								<WIDTH>3</WIDTH>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="2" SPRT="2">
+								<NAME>CHECKERSTAMP</NAME>
+								<ID>CHECKERSTAMP</ID>
+								<TYPE>DATETIME</TYPE>
+								<LBL>التاريخ والوقت</LBL>
+								<MAXLENGTH>15</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>DATE</DTYPE>
+								<SIZE>15</SIZE>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="1" SPRT="3">
+								<NAME>MODNO</NAME>
+								<ID>MODNO</ID>
+								<TYPE>TEXT</TYPE>
+								<LBL>رقم التعديل</LBL>
+								<MAXLENGTH>8</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE>4</SIZE>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="2" SPRT="3">
+								<NAME>ONCEAUTH</NAME>
+								<ID>ONCEAUTH</ID>
+								<TYPE>HIDDEN</TYPE>
+								<LBL/>
+								<MAXLENGTH>1</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<HIDDEN>-1</HIDDEN>
+								<DTYPE>VARCHAR</DTYPE>
+								<SIZE>1</SIZE>
+								<WIDTH>3</WIDTH>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" SPRT="4">
+								<NAME>TXNSTAT</NAME>
+								<ID>TXNSTAT</ID>
+								<TYPE>ROSELECT</TYPE>
+								<MAX_DECIMALS/>
+								<CHECKED>N</CHECKED>
+								<OPTION SELECTED="0" VALUE=""/>
+								<OPTION VALUE="C">Closed</OPTION>
+								<OPTION VALUE="O">Open</OPTION>
+								<LBL>حالة السجل</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE>1</SIZE>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" SPRT="4">
+								<NAME>AUTHSTAT</NAME>
+								<ID>AUTHSTAT</ID>
+								<TYPE>ROSELECT</TYPE>
+								<MAX_DECIMALS/>
+								<CHECKED>N</CHECKED>
+								<OPTION SELECTED="0" VALUE=""/>
+								<OPTION VALUE="A">Authorized</OPTION>
+								<OPTION VALUE="R">Rejected</OPTION>
+								<OPTION VALUE="U">Unauthorized</OPTION>
+								<LBL>حالة التفويض</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE>1</SIZE>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+			</TAB>
+		</FOOTER>
+	</SCREEN>
+</FORM>
